@@ -1,5 +1,6 @@
 import java.awt.event.*;                                                                                               
 import javax.swing.*;
+import java.io.*;
 
 public class FileMenu {
 
@@ -9,7 +10,7 @@ public class FileMenu {
   public static JMenuBar addFileMenu(JMenuBar menubar) {
     
 
-   
+    String text ="hello";
 
     // add the file menu
     JMenu file = new JMenu("File");
@@ -20,14 +21,71 @@ public class FileMenu {
     exit.setMnemonic(KeyEvent.VK_E);
     exit.setToolTipText("Exit the program");
     
+    JMenuItem save = new JMenuItem("Save", null);
+    exit.setMnemonic(KeyEvent.VK_S);
+    exit.setToolTipText("Save the file with a default name");
+    
+    JMenuItem saveAs = new JMenuItem("Save as...", null);
+    exit.setMnemonic(KeyEvent.VK_S);
+    exit.setToolTipText("Save the file with a custom name");
+    
+    JMenuItem load = new JMenuItem("Load", null);
+    exit.setMnemonic(KeyEvent.VK_L);
+    exit.setToolTipText("Loads a file");
+    
+    
+    
     // add the action as a new anonymous object
     exit.addActionListener(new ActionListener( ) {
       public void actionPerformed(ActionEvent e) {
         System.exit(0);
       }   
     }); 
+    
+   
+    
+    save.addActionListener(new ActionListener( ) {
+    	
+    	
+    	int count = 1;
+    	
+        public void actionPerformed(ActionEvent e) {
+         
+        try{
+        PrintWriter out = new PrintWriter("filename"+count+".txt");	
+        out.println("hello");	
+        out.close();
+        
+        } catch(IOException a){
+        	
+        }
+        }
+        
+           
+      }); 
+    
+    
+    saveAs.addActionListener(new ActionListener( ) {
+        public void actionPerformed(ActionEvent e) {
+          System.exit(0);
+        }   
+      }); 
+    
+    load.addActionListener(new ActionListener( ) {
+        public void actionPerformed(ActionEvent e) {
+          System.exit(0);
+        }   
+      }); 
+    
+    
+    
+    file.add(load);
+    file.add(save);
+    file.add(saveAs);
     file.add(exit);
 
+    
+    
     // add file to the menubar
     menubar.add(file);
     
