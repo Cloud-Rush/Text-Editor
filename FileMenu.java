@@ -68,7 +68,7 @@ public class FileMenu {
       }); 
     
     
-    saveAs.addActionListener(new ActionListener( )) {
+    saveAs.addActionListener(new ActionListener( ) {
         public void actionPerformed(ActionEvent e) {
           System.exit(0);
         }   
