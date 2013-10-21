@@ -20,7 +20,7 @@ public class TextMain {
 	    menubar = MenuBar.addMenuBar();
 	    
 	    // add text box
-	    JLabel searchBox = new JLabel("Enter text to search")
+	    //JLabel searchBox = new JLabel("Enter text to search")
 	    JTextField page = new JTextField(50);
 	    
 	    
