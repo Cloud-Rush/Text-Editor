@@ -33,6 +33,9 @@ public class FileMenu {
     exit.setMnemonic(KeyEvent.VK_L);
     exit.setToolTipText("Loads a file");
     
+    JMenuItem search = new JMenuItem("Search",null);
+    exit.setMnemonic(KeyEvent.VK_X);
+    exit.setToolTipText("Searches for given text");
     
     
     // add the action as a new anonymous object
@@ -65,7 +68,7 @@ public class FileMenu {
       }); 
     
     
-    saveAs.addActionListener(new ActionListener( ) {
+    saveAs.addActionListener(new ActionListener( )) {
         public void actionPerformed(ActionEvent e) {
           System.exit(0);
         }   
@@ -76,13 +79,21 @@ public class FileMenu {
           System.exit(0);
         }   
       }); 
-    
+    search.addActionListener(new ACtionListener() {
+    	public void actionPerformed(ACtion Event e) {
+    		JLabel label = new JLabel("Enter text to search");
+    		JTextField searchBox = new JTextField();
+    		frame.add(label);
+    		frame.add(searchBox);
+    	}
+    }
     
     
     file.add(load);
     file.add(save);
     file.add(saveAs);
     file.add(exit);
+    file.add(search);
 
     
     
