@@ -1,6 +1,7 @@
                                                                                               
 import javax.swing.*;
 
+import java.awt.*;
 
 
 public class TextMain {
@@ -33,6 +34,13 @@ public class TextMain {
 	    // set other things
 	    frame.setTitle("Text Editor!");
 	    frame.setSize(width, height);
+	    
+	    
+	    
+	     Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation((int)dim.getWidth()/2-(width/2),(int)dim.getHeight()/2-(height/2));
+	    
+	    
 	    
 	    // launch the windwo
 	    frame.setVisible(true);
