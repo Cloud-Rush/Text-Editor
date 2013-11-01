@@ -28,9 +28,8 @@ public class TextMain {
 		JLabel search = new JLabel("Enter text to search");
 		JTextField searchBox = new JTextField();
 		JButton button = new JButton("Press to Search");
-		JTextField  page = new JTextField(50);
+		JTextField page = TextBox.getInstance();
 
-		SaveFunction save = new SaveFunction(page);
 
 		// add the menubar to the window
 		frame.setJMenuBar(menubar);
