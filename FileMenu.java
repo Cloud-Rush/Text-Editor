@@ -1,5 +1,6 @@
 import java.awt.event.*;                                                                                               
 import javax.swing.*;
+
 import java.io.*;
 
 public class FileMenu {
@@ -56,8 +57,11 @@ public class FileMenu {
          
         try{
         PrintWriter out = new PrintWriter("filename"+count+".txt");	
-        out.println("hello");	
+        JTextArea t = TextBox.getInstance();
+       
+        t.write(out);	
         out.close();
+        count++;
         
         } catch(IOException a){
         	
@@ -70,8 +74,25 @@ public class FileMenu {
     
     saveAs.addActionListener(new ActionListener( ) {
         public void actionPerformed(ActionEvent e) {
-          System.exit(0);
-        }   
+          
+        	String name = JOptionPane.showInputDialog("Enter the name of your file:");
+        	
+        	try{
+                PrintWriter out = new PrintWriter(name+".txt");	
+                JTextArea t = TextBox.getInstance();
+                       
+                t.write(out);
+                	
+                out.close();
+             
+                
+                } catch(IOException a){
+                	
+                }
+                }	
+        	
+        	
+    
       }); 
     
     load.addActionListener(new ActionListener( ) {
