@@ -78,7 +78,7 @@ public class FileMenu {
         	String name = JOptionPane.showInputDialog("Enter the name of your file:");
         	
         	try{
-                PrintWriter out = new PrintWriter(name+".txt");	
+                PrintWriter out = new PrintWriter(name);	
                 JTextArea t = TextBox.getInstance();
                        
                 t.write(out);
@@ -97,7 +97,28 @@ public class FileMenu {
     
     load.addActionListener(new ActionListener( ) {
         public void actionPerformed(ActionEvent e) {
-          System.exit(0);
+
+
+        	String name = JOptionPane.showInputDialog("Enter the name of the file to load:");
+        	
+        	
+        	try {
+        		   
+        		   FileReader fr = new FileReader(name);
+        		   BufferedReader reader = new BufferedReader(fr);
+        		   JTextArea t = TextBox.getInstance();
+        		   
+        		     t.read(reader,"t");
+        		    
+        		}
+        		   catch (IOException ioe) {
+        		  
+        			   
+        		}
+        	
+        	
+        	
+        	
         }   
       }); 
     /*search.addActionListener(new ACtionListener() {
