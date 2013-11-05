@@ -36,7 +36,7 @@ public class FileMenu {
     
     
     JMenuItem search = new JMenuItem("Search",null);
-    search.setMnemonic(KeyEvent.VK_X);
+    search.setMnemonic(KeyEvent.VK_F);
     search.setToolTipText("Searches for given text");
     
     search.addActionListener(new ActionListener(){
