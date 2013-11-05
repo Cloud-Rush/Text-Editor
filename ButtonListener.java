@@ -25,7 +25,7 @@ class ButtonListener implements ActionListener
       int index = doc.indexOf(searchable,0);
       if(index >= 0)
       {
-        int end = index + s.length();
+        int end = index + searchable.length();
         hilit.addHighlight(index, end, painter);
         textArea.setCaretPosition(end);
         System.out.println("'" + searchable + "' found.");
