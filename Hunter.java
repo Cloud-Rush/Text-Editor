@@ -17,7 +17,7 @@ class Hunter
     	hilit = new DefaultHighlighter();
     	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
     }
-    public void search(JTextArea textArea, String prey)
+    public void search(String prey)
     {
       hilit.removeAllHighlights();
       String searchable = prey;
@@ -25,7 +25,8 @@ class Hunter
       {
         SJOptionPane.showMessageDialog(null,"Nothing to search.");
       }
-      String doc = textArea.getText();
+      JTextArea t = TextBox.getInstance();
+      String doc = t.getText();
       int index = doc.indexOf(searchable,0);
       if(index >= 0)
       {
