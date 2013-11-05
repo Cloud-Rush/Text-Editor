@@ -9,12 +9,13 @@ import javax.swing.GroupLayout.*;
 class Hunter 
 {
     final static Color  HILIT_COLOR = Color.LIGHT_GRAY;
-    final Color entryBg;
+    //final Color entryBg;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
-    public Hunter hunter()
+    public Hunter()
     {
-        
+    	hilit = new DefaultHighlighter();
+    	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
     }
     public void search(JTextArea textArea, JTextField searchBar)
     {
@@ -28,10 +29,17 @@ class Hunter
       int index = doc.indexOf(searchable,0);
       if(index >= 0)
       {
-        int end = index + searchable.length();
-        hilit.addHighlight(index, end, painter);
-        textArea.setCaretPosition(end);
-        System.out.println("'" + searchable + "' found.");
+    	try
+    	{
+    		int end = index + searchable.length();
+        		hilit.addHighlight(index, end, painter);
+        		textArea.setCaretPosition(end);
+        		System.out.println("'" + searchable + "' found.");
+    	}
+    	catch (BadLocationException e)
+    	{
+    		
+    	}
       }
       else
       {
