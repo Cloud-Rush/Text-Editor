@@ -12,10 +12,12 @@ class Hunter
     //final Color entryBg;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
+    private JTextArea t = TextBox.getInstance();
     public Hunter()
     {
     	hilit = new DefaultHighlighter();
     	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
+    	t.setHighlighter(hilit);
     }
     public void search(String prey)
     {
@@ -25,7 +27,6 @@ class Hunter
       {
         SJOptionPane.showMessageDialog(null,"Nothing to search.");
       }
-      JTextArea t = TextBox.getInstance();
       String doc = t.getText();
       int index = doc.indexOf(searchable,0);
       if(index >= 0)
