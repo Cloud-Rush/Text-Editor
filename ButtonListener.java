@@ -22,7 +22,7 @@ class ButtonListener implements ActionListener
         System.out.println("Nothing to search.");
       }
       String doc = textArea.getText();
-      int index = content.indexOf(searchable,0);
+      int index = doc.indexOf(searchable,0);
       if(index >= 0)
       {
         int end = index + s.length();
