@@ -4,7 +4,6 @@ import javax.swing.*;
 class TextBox {
   //the instace is a private variable inside the class
     private static final JTextArea instance = new JTextArea( );
-    intance.setLineWrap(true);
  
       // return the instance
         public static JTextArea getInstance( ) {
