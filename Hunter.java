@@ -17,13 +17,13 @@ class Hunter
     	hilit = new DefaultHighlighter();
     	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
     }
-    public void search(JTextArea textArea, JTextField searchBar)
+    public void search(JTextArea textArea, String prey)
     {
       hilit.removeAllHighlights();
-      String searchable = searchBar.getText();
+      String searchable = prey;
       if(searchable.length() <= 0)
       {
-        System.out.println("Nothing to search.");
+        SJOptionPane.showMessageDialog(null,"Nothing to search.");
       }
       String doc = textArea.getText();
       int index = doc.indexOf(searchable,0);
@@ -34,7 +34,7 @@ class Hunter
     		int end = index + searchable.length();
         		hilit.addHighlight(index, end, painter);
         		textArea.setCaretPosition(end);
-        		System.out.println("'" + searchable + "' found.");
+        		JOptionPane.showMessageDialog(null,"'" + searchable + "' found.");
     	}
     	catch (BadLocationException e)
     	{
@@ -43,7 +43,7 @@ class Hunter
       }
       else
       {
-        System.out.println("No results found");
+        JOptionPane.showMessageDialog(null,"No results found");
       }
     }
 }
