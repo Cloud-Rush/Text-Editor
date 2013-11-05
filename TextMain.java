@@ -25,16 +25,16 @@ public class TextMain {
 		
 		// add text box
 		JLabel search = new JLabel("Enter text to search");
-		JTextField searchBox = new JTextField();
-		JButton button = new JButton("Press to Search");
+		//JTextField searchBox = new JTextField();
+		//JButton button = new JButton("Press to Search");
 		JTextArea page = TextBox.getInstance();
 		TextBox.setEditable(true);
-		button.addActionListener(new ActionListener( ) {
+		/*button.addActionListener(new ActionListener( ) {
       			public void actionPerformed(ActionEvent e) {
       				Hunter hunter();
       				hunter.search(page,searchBox);
       			}
-		}
+		}*/
 
 
 		// add the menubar to the window
