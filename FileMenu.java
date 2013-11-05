@@ -41,7 +41,7 @@ public class FileMenu {
     
     search.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
-    		Hunter hunter;
+    		Hunter hunter = new Hunter();
     		String name = JOptionPane.showInputDialog("Enter text to be searched.");
     		 JTextArea t = TextBox.getInstance();
     		 hunter.search(t,name);
@@ -144,7 +144,7 @@ public class FileMenu {
     file.add(save);
     file.add(saveAs);
     file.add(exit);
-    //file.add(search);
+    file.add(search);
 
     
     
