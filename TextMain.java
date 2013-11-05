@@ -6,60 +6,45 @@ import java.awt.*;
 public class TextMain {
 
 
-	public static void main(String[] args) {
+        public static void main(String[] args) {
 
 
-		int width = 500;
-		int height = 400;
+                int width = 500;
+                int height = 400;
 
-		JFrame frame = new JFrame("Text Editor!");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                JFrame frame = new JFrame("Text Editor!");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		JMenuBar menubar = new JMenuBar( );
-		// creates menu bar with all drop down menus
-		menubar = MenuBar.addMenuBar();
-		
+                JMenuBar jMenu = new JMenuBar( );
+                MenuBar menuBar = new MenuBar( );
+                // creates menu bar with all drop down menus
+                jMenu = menuBar.addMenuBar();
+                
+                //set layout
+                frame.getContentPane( ).setLayout(new BoxLayout(frame.getContentPane( ), BoxLayout.Y_AXIS));
+                
+                // add text box
+                JTextArea page = TextBox.getInstance();
+                page.setEditable(true);
+                page.setLineWrap(true);
 
-		//set layout
-		frame.getContentPane( ).setLayout(new BoxLayout(frame.getContentPane( ), BoxLayout.Y_AXIS));
-		
-		// add text box
-		JLabel search = new JLabel("Enter text to search");
-		//JTextField searchBox = new JTextField();
-		//JButton button = new JButton("Press to Search");
-		JTextArea page = TextBox.getInstance();
-		TextBox.setEditable(true);
-		/*button.addActionListener(new ActionListener( ) {
-      			public void actionPerformed(ActionEvent e) {
-      				Hunter hunter();
-      				hunter.search(page,searchBox);
-      			}
-		}*/
+                // add the menubar to the window
+                frame.setJMenuBar(jMenu);
 
+                // set other things
+                frame.setTitle("Text Editor!");
+                frame.setSize(width, height);
+                frame.getContentPane().add(page);
+                
+                Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+                frame.setLocation((int)dim.getWidth()/2-(width/2),(int)dim.getHeight()/2-(height/2));
 
-		// add the menubar to the window
-		frame.setJMenuBar(menubar);
-
-		// set other things
-		frame.setTitle("Text Editor!");
-		frame.setSize(width, height);
-		frame.getContentPane().add(search);
-		frame.getContentPane().add(searchBox);
-		frame.getContentPane().add(button);
-		frame.getContentPane().add(page);
-		
-
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		frame.setLocation((int)dim.getWidth()/2-(width/2),(int)dim.getHeight()/2-(height/2));
+                // launch the window
+                frame.setVisible(true);
 
 
 
-		// launch the window
-		frame.setVisible(true);
-
-
-
-	}
+        }
 
 
 
