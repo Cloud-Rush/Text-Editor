@@ -12,7 +12,10 @@ class Hunter
     final Color entryBg;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
-    public Hunter hunter();
+    public Hunter hunter()
+    {
+        
+    }
     public void search(JTextArea textArea, JTextField searchBar)
     {
       hilit.removeAllHighlights();
