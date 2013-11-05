@@ -6,14 +6,14 @@ import javax.swing.text.*;
 import javax.swing.event.*;
 import javax.swing.GroupLayout.*;
 
-class ButtonListener implements ActionListener
+class Hunter 
 {
-    
     final static Color  HILIT_COLOR = Color.LIGHT_GRAY;
     final Color entryBg;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
-    public void actionPerformed(ActionEvent e)
+    public Hunter hunter();
+    public void search(JTextArea textArea, JTextField searchBar)
     {
       hilit.removeAllHighlights();
       String searchable = searchBar.getText();
