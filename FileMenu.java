@@ -23,16 +23,16 @@ public class FileMenu {
     exit.setToolTipText("Exit the program");
     
     JMenuItem save = new JMenuItem("Save", null);
-    exit.setMnemonic(KeyEvent.VK_S);
-    exit.setToolTipText("Save the file with a default name");
+    save.setMnemonic(KeyEvent.VK_S);
+    save.setToolTipText("Save the file with a default name");
     
     JMenuItem saveAs = new JMenuItem("Save as...", null);
-    exit.setMnemonic(KeyEvent.VK_S);
-    exit.setToolTipText("Save the file with a custom name");
+    saveAs.setMnemonic(KeyEvent.VK_S);
+    saveAs.setToolTipText("Save the file with a custom name");
     
     JMenuItem load = new JMenuItem("Load", null);
-    exit.setMnemonic(KeyEvent.VK_L);
-    exit.setToolTipText("Loads a file");
+    load.setMnemonic(KeyEvent.VK_L);
+    load.setToolTipText("Loads a file");
     
     /*JMenuItem search = new JMenuItem("Search",null);
     exit.setMnemonic(KeyEvent.VK_X);
