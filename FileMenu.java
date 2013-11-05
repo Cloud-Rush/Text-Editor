@@ -43,8 +43,7 @@ public class FileMenu {
     	public void actionPerformed(ActionEvent e){
     		Hunter hunter = new Hunter();
     		String name = JOptionPane.showInputDialog("Enter text to be searched.");
-    		 JTextArea t = TextBox.getInstance();
-    		 hunter.search(t,name);
+    		 hunter.search(name);
     	}
     });
     
