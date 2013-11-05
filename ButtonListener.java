@@ -2,9 +2,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import javax.swing.text.*;
 import javax.swing.event.*;
 import javax.swing.GroupLayout.*;
@@ -22,7 +19,7 @@ class ButtonListener implements ActionListener
       String searchable = searchBar.getText();
       if(searchable.length() <= 0)
       {
-        message("Nothing to search.");
+        System.out.println("Nothing to search.");
       }
       String doc = textArea.getText();
       int index = content.indexOf(searchable,0);
@@ -31,11 +28,11 @@ class ButtonListener implements ActionListener
         int end = index + s.length();
         hilit.addHighlight(index, end, painter);
         textArea.setCaretPosition(end);
-        message("'" + searchable + "' found.");
+        System.out.println("'" + searchable + "' found.");
       }
       else
       {
-        message("No results found");
+        System.out.println("No results found");
       }
     }
 }
