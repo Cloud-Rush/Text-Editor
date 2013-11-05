@@ -8,7 +8,7 @@ import javax.swing.GroupLayout.*;
 
 class Hunter 
 {
-    final static Color  HILIT_COLOR = Color.LIGHT_GRAY;
+	final static Color HILIT_COLOR = Color.LIGHT_GRAY;
     //final Color entryBg;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
@@ -19,13 +19,14 @@ class Hunter
     	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
     	t.setHighlighter(hilit);
     }
-    public void search(String prey)
+    public void search(String name)
     {
-      hilit.removeAllHighlights();
-      String searchable = prey;
+      //hilit.removeAllHighlights();
+      String searchable = name;
+      System.out.println(searchable);
       if(searchable.length() <= 0)
       {
-        JOptionPane.showMessageDialog(null,"Nothing to search.");
+    	  JOptionPane.showMessageDialog(null,"Nothing to search.");
       }
       String doc = t.getText();
       int index = doc.indexOf(searchable,0);
@@ -35,7 +36,7 @@ class Hunter
     	{
     		int end = index + searchable.length();
         		hilit.addHighlight(index, end, painter);
-        		textArea.setCaretPosition(end);
+        		t.setCaretPosition(end);
         		JOptionPane.showMessageDialog(null,"'" + searchable + "' found.");
     	}
     	catch (BadLocationException e)
@@ -45,7 +46,7 @@ class Hunter
       }
       else
       {
-        JOptionPane.showMessageDialog(null,"No results found");
+    	  JOptionPane.showMessageDialog(null,"No results found");
       }
     }
 }
