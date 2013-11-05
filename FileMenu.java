@@ -8,7 +8,7 @@ public class FileMenu {
 	
 	
   // adds the file menu to the menu bar	
-  public static JMenuBar addFileMenu(JMenuBar menubar) {
+  public JMenuBar addFileMenu(JMenuBar menubar) {
     
 
     String text ="hello";
@@ -34,18 +34,18 @@ public class FileMenu {
     load.setMnemonic(KeyEvent.VK_L);
     load.setToolTipText("Loads a file");
     
-    
     JMenuItem search = new JMenuItem("Search",null);
-    search.setMnemonic(KeyEvent.VK_F);
+    search.setMnemonic(KeyEvent.VK_X);
     search.setToolTipText("Searches for given text");
     
     search.addActionListener(new ActionListener(){
-    	public void actionPerformed(ActionEvent e){
-    		Hunter hunter = new Hunter();
-    		String name = JOptionPane.showInputDialog("Enter text to be searched.");
-    		 hunter.search(name);
-    	}
+            public void actionPerformed(ActionEvent e){
+                    Hunter hunter = new Hunter();
+                    String name = JOptionPane.showInputDialog("Enter text to be searched.");
+                    hunter.search(name);
+            }
     });
+    
     
     // add the action as a new anonymous object
     exit.addActionListener(new ActionListener( ) {
@@ -142,8 +142,8 @@ public class FileMenu {
     file.add(load);
     file.add(save);
     file.add(saveAs);
-    file.add(exit);
     file.add(search);
+    file.add(exit);
 
     
     
