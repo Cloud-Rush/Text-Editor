@@ -25,7 +25,7 @@ class Hunter
       String searchable = prey;
       if(searchable.length() <= 0)
       {
-        SJOptionPane.showMessageDialog(null,"Nothing to search.");
+        JOptionPane.showMessageDialog(null,"Nothing to search.");
       }
       String doc = t.getText();
       int index = doc.indexOf(searchable,0);
