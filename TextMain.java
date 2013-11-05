@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 
 import java.awt.*;
@@ -48,7 +47,7 @@ public class TextMain {
 
 
 
-		// launch the windwo
+		// launch the window
 		frame.setVisible(true);
 
 
