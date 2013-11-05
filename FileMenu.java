@@ -46,7 +46,7 @@ public class FileMenu {
     		 JTextArea t = TextBox.getInstance();
     		 hunter.search(t,name);
     	}
-    }
+    });
     
     // add the action as a new anonymous object
     exit.addActionListener(new ActionListener( ) {
