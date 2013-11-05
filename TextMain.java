@@ -28,6 +28,7 @@ public class TextMain {
 		JTextField searchBox = new JTextField();
 		JButton button = new JButton("Press to Search");
 		JTextArea page = TextBox.getInstance();
+		TextBox.setEditable(true);
 
 
 		// add the menubar to the window
