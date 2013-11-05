@@ -34,10 +34,19 @@ public class FileMenu {
     load.setMnemonic(KeyEvent.VK_L);
     load.setToolTipText("Loads a file");
     
-    /*JMenuItem search = new JMenuItem("Search",null);
-    exit.setMnemonic(KeyEvent.VK_X);
-    exit.setToolTipText("Searches for given text");*/
     
+    JMenuItem search = new JMenuItem("Search",null);
+    search.setMnemonic(KeyEvent.VK_X);
+    search.setToolTipText("Searches for given text");
+    
+    search.addActionListener(new ActionListener(){
+    	public void actionPerformed(ActionEvent e){
+    		Hunter hunter;
+    		String name = JOptionPane.showInputDialog("Enter text to be searched.");
+    		 JTextArea t = TextBox.getInstance();
+    		 hunter.search(t,name);
+    	}
+    }
     
     // add the action as a new anonymous object
     exit.addActionListener(new ActionListener( ) {
