@@ -16,7 +16,7 @@ public class MenuBar {
      
      // add other drop down menus here.
      
-     //menubar = EditMenu.addEditMenu(menubar);
+     menubar = EditMenu.addEditMenu(menubar);
      
     return menubar;
     
