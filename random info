@@ -1,4 +1,6 @@
 http://docs.oracle.com/javase/tutorial/uiswing/components/textfield.html that is your new best friend
+http://gamedev.tutsplus.com/tutorials/implementation/let-your-players-undo-their-in-game-mistakes-with-the-command-pattern/
+(The link above this goes to a thing to use command manager for undo and redo)
 
 
 Andrew: undo-redo cut copy and past
