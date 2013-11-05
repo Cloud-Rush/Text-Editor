@@ -7,18 +7,19 @@ public class MenuBar {
 	
 	
 	// adds drop down menus to the menu bar
-	 public static JMenuBar addMenuBar() {
+	 public JMenuBar addMenuBar() {
 	   // create the menu bar
-     JMenuBar menubar = new JMenuBar( );
+     JMenuBar menuBar = new JMenuBar( );
      
-     
-     menubar = FileMenu.addFileMenu(menubar);
+     FileMenu file = new FileMenu();
+     menuBar = file.addFileMenu(menuBar);
      
      // add other drop down menus here.
      
-     menubar = EditMenu.addEditMenu(menubar);
+     EditMenu edit = new EditMenu();
+     menuBar = edit.addEditMenu(menuBar);
      
-    return menubar;
+    return menuBar;
     
 	 }
 }
