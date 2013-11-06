@@ -14,7 +14,6 @@ import javax.swing.undo.*;
 
 public class EditMenu {  
 	
-	//private AbstractDocument doc;
 	private UndoManager undo = new UndoManager();
 	private UndoAction undoAction;
 	private RedoAction redoAction;
@@ -50,7 +49,8 @@ public class EditMenu {
     redoAction = new RedoAction();
     edit.add(redoAction);
     
-	//doc.addUndoableEditListener(new MyUndoableEditListener());
+    JTextArea page = TextBox.getInstance();
+    page.getDocument().addUndoableEditListener(new MyUndoableEditListener());
 	
 	// add file to the menubar
     menubar.add(edit);
