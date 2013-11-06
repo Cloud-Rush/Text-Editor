@@ -20,8 +20,6 @@ public class TextMain {
                 // creates menu bar with all drop down menus
                 jMenu = menuBar.addMenuBar();
                 
-                //set layout
-                frame.getContentPane( ).setLayout(new BoxLayout(frame.getContentPane( ), BoxLayout.Y_AXIS));
                 
                 // add text box
                 JTextArea page = TextBox.getInstance();
