@@ -8,9 +8,9 @@ import javax.swing.GroupLayout.*;
 
 class Hunter 
 {
-    final static Color HILIT_COLOR = Color.LIGHT_GRAY;
-    final Highlighter hilit;
-    final Highlighter.HighlightPainter painter;
+    private final static Color HILIT_COLOR = Color.LIGHT_GRAY;
+    private final Highlighter hilit;
+    private final Highlighter.HighlightPainter painter;
     private JTextArea t = TextBox.getInstance();
     public Hunter()
     {
