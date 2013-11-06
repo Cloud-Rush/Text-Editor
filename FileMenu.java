@@ -13,11 +13,11 @@ public class FileMenu {
 
     String text ="hello";
 
-    // add the file menu
+    // create the file menu
     JMenu file = new JMenu("File");
     file.setMnemonic(KeyEvent.VK_F);
 
-    // add a menu item
+    // add menu items and mnemonics/ tool tips
     JMenuItem exit = new JMenuItem("Exit", null);
     exit.setMnemonic(KeyEvent.VK_E);
     exit.setToolTipText("Exit the program");
@@ -38,8 +38,12 @@ public class FileMenu {
     search.setMnemonic(KeyEvent.VK_X);
     search.setToolTipText("Searches for given text");
     
-    search.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+    
+    //action listeners for each function
+    search.addActionListener(new ActionListener()
+    {
+            public void actionPerformed(ActionEvent e)
+            {
                     Hunter hunter = new Hunter();
                     String name = JOptionPane.showInputDialog("Enter text to be searched.");
                     hunter.search(name);
@@ -48,28 +52,32 @@ public class FileMenu {
     
     
     // add the action as a new anonymous object
-    exit.addActionListener(new ActionListener( ) {
-      public void actionPerformed(ActionEvent e) {
+    exit.addActionListener(new ActionListener( ) 
+    {
+      public void actionPerformed(ActionEvent e) 
+      {
         System.exit(0);
       }   
     }); 
     
    
     
-    save.addActionListener(new ActionListener( ) {
+    save.addActionListener(new ActionListener( ) 
+    {
     	
     	
     	int count = 1;
     	
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) 
+        {
          
-        try{
-        PrintWriter out = new PrintWriter("filename"+count+".txt");	
-        JTextArea t = TextBox.getInstance();
+        	try{
+        	PrintWriter out = new PrintWriter("filename"+count+".txt");	
+        	JTextArea t = TextBox.getInstance();
        
-        t.write(out);	
-        out.close();
-        count++;
+		t.write(out);	
+        	out.close();
+        	count++;
         
         } catch(IOException a){
         	
@@ -80,8 +88,10 @@ public class FileMenu {
       }); 
     
     
-    saveAs.addActionListener(new ActionListener( ) {
-        public void actionPerformed(ActionEvent e) {
+    saveAs.addActionListener(new ActionListener( ) 
+    {
+        public void actionPerformed(ActionEvent e) 
+        {
           
         	String name = JOptionPane.showInputDialog("Enter the name of your file:");
         	
@@ -97,14 +107,17 @@ public class FileMenu {
                 } catch(IOException a){
                 	
                 }
-                }	
+             
+         }	
         	
         	
     
       }); 
     
-    load.addActionListener(new ActionListener( ) {
-        public void actionPerformed(ActionEvent e) {
+    load.addActionListener(new ActionListener( ) 
+    {
+        public void actionPerformed(ActionEvent e) 
+        {
 
 
         	String name = JOptionPane.showInputDialog("Enter the name of the file to load:");
@@ -129,16 +142,9 @@ public class FileMenu {
         	
         }   
       }); 
-    /*search.addActionListener(new ACtionListener() {
-    	public void actionPerformed(ACtion Event e) {
-    		JLabel label = new JLabel("Enter text to search");
-    		JTextField searchBox = new JTextField();
-    		frame.add(label);
-    		frame.add(searchBox);
-    	}
-    }*/
+
     
-    
+    // add menu items to the menu
     file.add(load);
     file.add(save);
     file.add(saveAs);
@@ -147,7 +153,7 @@ public class FileMenu {
 
     
     
-    // add file to the menubar
+    // add file menu to the menubar
     menubar.add(file);
     
     return menubar;
