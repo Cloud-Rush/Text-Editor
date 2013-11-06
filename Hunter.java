@@ -30,7 +30,7 @@ class Hunter
       }
       String doc = t.getText();
       int index = doc.indexOf(searchable,0);
-      if(index >= 0)
+      if(index >= 0 && searchable.length() > 0)
       {
     	try
     	{
@@ -46,7 +46,10 @@ class Hunter
       }
       else
       {
+          if (searchable.length() > 0)
+          {
     	  JOptionPane.showMessageDialog(null,"No results found");
+          }
       }
     }
 }
