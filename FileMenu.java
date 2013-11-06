@@ -148,7 +148,9 @@ public class FileMenu {
     file.add(load);
     file.add(save);
     file.add(saveAs);
+    file.addSeparator();
     file.add(search);
+    file.addSeparator();
     file.add(exit);
 
     
