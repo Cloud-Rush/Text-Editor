@@ -8,8 +8,7 @@ import javax.swing.GroupLayout.*;
 
 class Hunter 
 {
-	final static Color HILIT_COLOR = Color.LIGHT_GRAY;
-    //final Color entryBg;
+    final static Color HILIT_COLOR = Color.LIGHT_GRAY;
     final Highlighter hilit;
     final Highlighter.HighlightPainter painter;
     private JTextArea t = TextBox.getInstance();
@@ -19,9 +18,10 @@ class Hunter
     	painter = new DefaultHighlighter.DefaultHighlightPainter(HILIT_COLOR);
     	t.setHighlighter(hilit);
     }
+    //performs actual search function by finding requested string with getText, then highlights using hilit
+    //returns "nothing to search" if requested string doesn't exist
     public void search(String name)
     {
-      //hilit.removeAllHighlights();
       String searchable = name;
       System.out.println(searchable);
       if(searchable.length() <= 0)
