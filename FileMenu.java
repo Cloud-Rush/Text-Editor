@@ -39,7 +39,7 @@ public class FileMenu {
     search.setToolTipText("Searches for given text");
     
     
-    //action listeners for each function
+    //action listeners for each function using anonymous objects for the action
     search.addActionListener(new ActionListener()
     {
             public void actionPerformed(ActionEvent e)
@@ -51,7 +51,7 @@ public class FileMenu {
     });
     
     
-    // add the action as a new anonymous object
+   
     exit.addActionListener(new ActionListener( ) 
     {
       public void actionPerformed(ActionEvent e) 
